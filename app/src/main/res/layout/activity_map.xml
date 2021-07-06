@@ -22,7 +22,7 @@
             android:insetRight="0dp"
             android:insetTop="0dp"
             app:icon="@drawable/ic_back"
-            app:iconTint="#4CAF50"
+            app:iconTint="#ffb74d"
             style="@style/Widget.MaterialComponents.Button.TextButton"/>
         <TextView
             android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
             android:textSize="24sp"
             android:layout_centerInParent="true"
             android:fontFamily="@font/gotham_bold"
-            android:textColor="#4CAF50" />
+            android:textColor="#ffb74d" />
     </RelativeLayout>
 
 

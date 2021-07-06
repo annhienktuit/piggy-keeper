@@ -31,7 +31,7 @@
             android:fontFamily="@font/gotham_bold"
             android:layout_centerHorizontal="true"
             android:textSize="24sp"
-            android:text="My Wallet Team"
+            android:text="Piggy Keeper Team"
             />
     </RelativeLayout>
 

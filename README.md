@@ -1,4 +1,4 @@
-#MY WALLET
+#Piggy Keeper
 
 A money management with realtime services for SE114.L21 project in UIT
 
@@ -38,7 +38,7 @@ A money management with realtime services for SE114.L21 project in UIT
 * [CurrenConv API](https://free.currconv.com/api)
 ## Installation 
 
-Install with APK file [here](https://apkfab.com/my-wallet/com.annhienktuit.mywallet/apk?h=0be1b8709b0e44bdaf15485fe22d6358664ef7b60f96b1714dd692bc978c5aaa) 
+Install with APK file [here](https://apkfab.com/my-wallet/com.annhienktuit.piggykeeper/apk?h=0be1b8709b0e44bdaf15485fe22d6358664ef7b60f96b1714dd692bc978c5aaa)
 
 
     

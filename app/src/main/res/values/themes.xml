@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MyWallet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.piggykeeper" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowFullscreen">true</item>
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#4CAF50</item>
+        <item name="colorPrimary">#ffb74d</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -18,7 +18,7 @@
         <item name="tint">@color/white</item>
     </style>
     <style name="ProgressBar1">
-        <item name="colorAccent">#4CAF50</item> <!-- Whatever color you want-->
+        <item name="colorAccent">#4caf50</item> <!-- Whatever color you want-->
     </style>
     <style name="ProgressBar2">
         <item name="colorAccent">#DC6C49</item> <!-- Whatever color you want-->

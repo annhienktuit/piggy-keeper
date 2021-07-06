@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.SplashScreenActivity">
+
     <ImageView
         android:id="@+id/imageViewLogo"
         android:layout_width="269dp"
@@ -13,15 +14,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269"
-        app:srcCompat="@drawable/ic_wallet_new" />
+        app:layout_constraintVertical_bias="0.267"
+        app:srcCompat="@drawable/ic_piggy_bank" />
 
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/mainColor"
-        android:text="My Wallet"
+        android:text="Piggy Keeper"
         android:fontFamily="@font/gotham_bold"
         android:textAllCaps="true"
         android:textSize="32sp"

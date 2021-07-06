@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "686018601473",
+    "firebase_url": "https://my-wallet-80ed7-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "my-wallet-80ed7",
     "storage_bucket": "my-wallet-80ed7.appspot.com"
   },
@@ -9,10 +10,79 @@
       "client_info": {
         "mobilesdk_app_id": "1:686018601473:android:fc8ffe088fc88e8bd89600",
         "android_client_info": {
-          "package_name": "com.annhienktuit.mywallet"
+          "package_name": "com.annhienktuit.piggykeeper"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "686018601473-dsf90sm3thl797eobivkft4q0rtnuj22.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.annhienktuit.piggykeeper",
+            "certificate_hash": "92130ee6add370483c948e92bfdfaf3f7e517dcf"
+          }
+        },
+        {
+          "client_id": "686018601473-g6vqvrafots8v00kpgjmd8pdjeqbfr65.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.annhienktuit.piggykeeper",
+            "certificate_hash": "87f803a8850469f0d8a5770e24206d59591734b5"
+          }
+        },
+        {
+          "client_id": "686018601473-k5firnuasrn5qnpblle6g1me604lktnn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.annhienktuit.piggykeeper",
+            "certificate_hash": "39243949d522de60eaf8ed9fd3f7fbb53266642c"
+          }
+        },
+        {
+          "client_id": "686018601473-v22pff8dvh8v2o4pafh56saviv9hfolg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.annhienktuit.piggykeeper",
+            "certificate_hash": "c2ab82352fc89d3a98f417b692042f798b36117a"
+          }
+        },
+        {
+          "client_id": "686018601473-3qmin1ik8n4ea7o1bcqmt3s06bq5ao9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqkDXEuYg_kuequlRY1fXf759Eqo-dx4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686018601473-3qmin1ik8n4ea7o1bcqmt3s06bq5ao9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686018601473:android:74a5ed95e917a716d89600",
+        "android_client_info": {
+          "package_name": "com.annhienktuit.piggykeeper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686018601473-aer89j7q7n1sdmfkf79avtqh1g3sl3vm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.annhienktuit.piggykeeper",
+            "certificate_hash": "92130ee6add370483c948e92bfdfaf3f7e517dcf"
+          }
+        },
         {
           "client_id": "686018601473-3qmin1ik8n4ea7o1bcqmt3s06bq5ao9f.apps.googleusercontent.com",
           "client_type": 3
