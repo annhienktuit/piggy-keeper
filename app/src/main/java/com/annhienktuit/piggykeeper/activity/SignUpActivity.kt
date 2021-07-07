@@ -125,7 +125,6 @@ class SignUpActivity : AppCompatActivity() {
                         if (user != null) {
                             user.sendEmailVerification()
                         }
-                        Thread.sleep(15000)
                         ref.child(user!!.uid).child("name").setValue(edtLastName.text.toString() + " " + edtFirstName.text.toString())
                         ref.child(user.uid).child("limits").child("total").setValue(0)
                         ref.child(user.uid).child("savings").child("total").setValue(0)
