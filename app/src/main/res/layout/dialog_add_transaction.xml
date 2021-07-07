@@ -29,7 +29,7 @@
             android:fontFamily="@font/gotham_bold"
             android:text="Income"
             android:textAllCaps="false"
-            android:textColor="@color/mainColor"
+            android:textColor="@color/old_main_color"
             android:textSize="18sp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
@@ -40,7 +40,7 @@
             android:fontFamily="@font/gotham_bold"
             android:text="Expense"
             android:textAllCaps="false"
-            android:textColor="#f44336"
+            android:textColor="@color/mainColor"
             android:textSize="18sp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
     </com.google.android.material.button.MaterialButtonToggleGroup>

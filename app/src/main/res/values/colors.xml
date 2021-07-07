@@ -9,5 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="mainColor">#ec407a</color>
     <color name="blue500">#03a9f4</color>
-    <color name="indigo500">#ec407a</color>
+    <color name="old_main_color">#4caf50</color>
 </resources>
