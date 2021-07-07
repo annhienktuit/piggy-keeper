@@ -3,6 +3,7 @@ package com.annhienktuit.piggykeeper.activity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -66,13 +67,22 @@ class CardActivity : AppCompatActivity() {
             clipboard.setPrimaryClip(clip)
         }
         btnCopyAll.setOnClickListener {
-            val clipboard: ClipboardManager =
-                getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val fullInformation = ClipData.newPlainText("Copied","Name: " + card!!.namePerson.toString() + "\n"
-                    + "Account number: " + card?.accountNumber.toString() + "\n"
-                    + "Cardnumber: " + card?.cardNumber.toString() )
-            toast("Copied to clipboard")
-            clipboard.setPrimaryClip(fullInformation)
+//            val clipboard: ClipboardManager =
+//                getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+//            val fullInformation = ClipData.newPlainText("Copied","Name: " + card!!.namePerson.toString() + "\n"
+//                    + "Account number: " + card?.accountNumber.toString() + "\n"
+//                    + "Cardnumber: " + card?.cardNumber.toString() )
+//            toast("Copied to clipboard")
+//            clipboard.setPrimaryClip(fullInformation)
+            val sharingIntent = Intent(Intent.ACTION_SEND)
+            sharingIntent.type = "text/plain"
+            val shareBody = "This is my card information \n " +
+                    "Name: ${card!!.namePerson}\n" +
+                    "Account number: ${card!!.accountNumber}\n" +
+                    "Cardnumber: + ${card!!.cardNumber}"
+            sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Piggy Keeper")
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody)
+            startActivity(Intent.createChooser(sharingIntent, "Share via"))
         }
     }
     fun setData(card: Card?) {
