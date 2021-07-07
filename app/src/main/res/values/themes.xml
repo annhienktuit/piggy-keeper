@@ -3,7 +3,7 @@
     <style name="Theme.piggykeeper" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowFullscreen">true</item>
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#ffb74d</item>
+        <item name="colorPrimary">#ec407a</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

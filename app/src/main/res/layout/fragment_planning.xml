@@ -58,7 +58,11 @@
                         android:layout_marginBottom="0dp"
                         android:text="Add new"
                         android:textAllCaps="false"
-                        app:icon="@drawable/ic_add_24dp" />
+                        android:textColor="@color/mainColor"
+                        android:textColorHighlight="#4caf50"
+                        android:textColorLink="#4caf50"
+                        app:icon="@drawable/ic_add_24dp"
+                        app:rippleColor="#4caf50" />
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView

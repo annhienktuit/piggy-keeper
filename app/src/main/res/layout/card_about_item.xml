@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#66bb6a"
+        android:backgroundTint="@color/mainColor"
         android:layout_margin="10dp"
         app:cardCornerRadius="15dp">
 

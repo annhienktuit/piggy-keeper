@@ -36,7 +36,7 @@
         app:layout_anchor="@id/bottomAppBar"
         style="@style/ThemeFloatingButton"
         app:rippleColor="@color/white"
-        app:backgroundTint="#43D149"/>
+        app:backgroundTint="#ec407a"/>
 
     <FrameLayout
         android:id="@+id/container_fragment"
