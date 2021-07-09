@@ -1,6 +1,10 @@
-#Piggy Keeper
+<p align="center">
+   <img src="https://i.imgur.com/8sByYKX.png" height = "360" width="720"> 
+   </p>
 
-A money management with realtime services for SE114.L21 project in UIT
+A money management with realtime services for based on My Wallet open source
+
+After commit **#0fe7377965537047111930e4ccdf8ac1c6379799**, this project is self paced project by me
 
 
 ## Authors
@@ -44,84 +48,26 @@ Install with APK file [here](https://apkfab.com/my-wallet/com.annhienktuit.piggy
     
 ## Screenshots
 <p align="center">
-   <img src="https://i.imgur.com/53aVrX0.png" height = "720" width="360"> 
+   <img src="https://i.imgur.com/eDqb7A3.jpg" height = "720" width="360"> 
    </p>
    
    <p align="center">
-   <img src="https://i.imgur.com/NCS7GAl.png" height = "720" width="360"> 
+   <img src="https://i.imgur.com/0iI3Rn0.jpg" height = "720" width="360"> 
    </p>
    
    <p align="center">
-   <img src="https://i.imgur.com/Fslc6zQ.png" height = "720" width="360"> 
+   <img src="https://i.imgur.com/mm3jQzc.jpg" height = "720" width="360"> 
    </p>
    
    <p align="center">
-   <img src="https://i.imgur.com/Qb2fe7F.png" height = "720" width="360"> 
+   <img src="https://i.imgur.com/z6xOVC1.jpg" height = "720" width="360"> 
    </p>
    
    <p align="center">
-   <img src="https://i.imgur.com/cK4eUu1.png" height = "720" width="360"> 
-   </p>
-   
-   
-   <p align="center">
-   <img src="https://i.imgur.com/h2oIQpL.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/q0jtA8A.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/DfUbJSV.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/Nkn6V5i.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/3lxqwWo.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/vgn4au8.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/8iv2Ph6.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/UGPbrSn.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/MXsxTSf.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/RZoLyrd.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/8qkNZ3v.png" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/YjvnI2Y.jpg" height = "720" width="360"> 
-   </p>
-   
-   <p align="center">
-   <img src="https://i.imgur.com/J7DiYKJ.jpg" height = "720" width="360"> 
+   <img src="https://i.imgur.com/ZHTYyln.jpg" height = "720" width="360"> 
    </p>
    
 
-   <p align="center">
-   <img src="https://i.imgur.com/28wCqh7.png" height = "720" width="360"> 
-   </p>
-   
-  
 
 
 
