@@ -79,10 +79,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvVND"
+                android:id="@+id/tvUSD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" VND"
+                android:text=" USD"
                 android:textColor="@color/mainColor"
                 android:textSize="16sp"
                 android:textStyle="bold" />

@@ -203,7 +203,7 @@ class SavingActivity : AppCompatActivity() {
         recyclerTransactionSaving.setHasFixedSize(true)
         nameOfSavingProduct.text = saving?.nameOfProduct.toString()
         if (total != null && current != null) {
-            totalSaving.text = "of " + changeToMoney(total) + " VND"
+            totalSaving.text = "of " + changeToMoney(total) + " USD"
             currentSaving.text = changeToMoney(current) + " "
         }
         val tmp1 = current?.toLong()
@@ -213,7 +213,7 @@ class SavingActivity : AppCompatActivity() {
             floatingAdd.isEnabled = false
         } else {
             notifyCompleted.text =
-                "You need to save " + changeToMoney((tmp2!! - tmp1!!).toString()) + " VND"
+                "You need to save " + changeToMoney((tmp2!! - tmp1!!).toString()) + " USD"
             floatingAdd.isEnabled = true
         }
         val per = tmp1!! * 100 / tmp2!!

@@ -79,7 +79,7 @@ class HomeFragment : Fragment() {
         var txtIncome = view.findViewById<TextView>(R.id.textIncome)
         var txtExpense = view.findViewById<TextView>(R.id.textExpense)
         txtName.text = name
-        txtBalance.text = changeToMoney(balance) + " VND"
+        txtBalance.text = changeToMoney(balance) + " USD"
         txtIncome.text = changeToMoney(income)
         txtExpense.text = changeToMoney(expense)
     }

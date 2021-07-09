@@ -42,7 +42,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-15,000 VND"
+                android:text="-15,000 USD"
                 android:textColor="#FFFFFF"
                 android:fontFamily="@font/gotham_bold"
                 android:textSize="14sp"/>

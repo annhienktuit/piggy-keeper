@@ -63,7 +63,7 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/gotham_bold"
-                android:text="396,743,500 VND"
+                android:text="396,743,500 USD"
                 android:textColor="@color/white"
                 android:textSize="36dp" />
 

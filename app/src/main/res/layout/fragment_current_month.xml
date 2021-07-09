@@ -50,7 +50,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" VND"
+                android:text=" USD"
                 android:textColor="#2F2543"
                 android:textStyle="bold" />
 
@@ -146,7 +146,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" VND"
+                    android:text=" USD"
                     android:textColor="#43D149"
                     android:textStyle="bold" />
 
@@ -167,15 +167,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
-                    android:textColor="#F2884D"
+                    android:textColor="@color/mainColor"
                     android:textStyle="bold"
                      />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" VND"
-                    android:textColor="#F2884D"
+                    android:text=" USD"
+                    android:textColor="@color/mainColor"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -270,7 +270,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" VND"
+                    android:text=" USD"
                     android:textColor="#43D149"
                     android:textStyle="bold" />
 
@@ -297,7 +297,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" VND"
+                    android:text=" USD"
                     android:textColor="#F2884D"
                     android:textStyle="bold" />
 

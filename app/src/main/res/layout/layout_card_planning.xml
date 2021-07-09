@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/gotham_bold"
                     android:textSize="14sp"
-                    android:textColor="#4caf50"
+                    android:textColor="@color/mainColor"
                     android:text="Agribank"/>
 
 

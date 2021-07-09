@@ -35,7 +35,7 @@ class AllMonthAdapter(private val context: Context, private val dataSource: Muta
         val month = rowView.findViewById<TextView>(R.id.tvMonth)
         val balance = rowView.findViewById<TextView>(R.id.tvBalance)
         val mood = rowView.findViewById<ImageView>(R.id.ivMood)
-        val vndText = rowView.findViewById<TextView>(R.id.tvVND)
+        val vndText = rowView.findViewById<TextView>(R.id.tvUSD)
 
         val trans = getItem(position) as DetailTransaction
 

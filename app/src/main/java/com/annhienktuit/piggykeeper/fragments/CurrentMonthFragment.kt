@@ -42,7 +42,6 @@ class CurrentMonthFragment : Fragment() {
     var amountCurrentIncome: Long = 0
     var amountCurrentDebt: Long = 0
     var amountCurrentLoan: Long = 0
-    //---------------------------------------------
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,10 +49,10 @@ class CurrentMonthFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView: View = inflater.inflate(R.layout.fragment_current_month, container, false)
-
         setData(rootView)
         setIncomePieChartData()
         setExpensePieChartData()
+
 
         return rootView
     }
@@ -84,8 +83,6 @@ class CurrentMonthFragment : Fragment() {
         pieIncomeChart.setProgressBar(progressIncomeBar)
         APIlib.getInstance().setActiveAnyChartView(pieIncomeChart)
         var pie: Pie = AnyChart.pie()
-
-
         pie.data(listPieChartData)
 
         pie.title("Current Month Income")
@@ -96,9 +93,9 @@ class CurrentMonthFragment : Fragment() {
             .position("center-bottom")
             .itemsLayout(LegendLayout.HORIZONTAL)
             .align(Align.CENTER)
-
                 pieIncomeChart.setChart(pie)
     }
+
 
     private fun setExpensePieChartData() {
         val data = (activity as MainActivity)

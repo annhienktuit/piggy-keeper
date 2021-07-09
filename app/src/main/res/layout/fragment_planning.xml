@@ -56,13 +56,12 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginEnd="0dp"
                         android:layout_marginBottom="0dp"
-                        android:text="Add new"
-                        android:textAllCaps="false"
-                        android:textColor="@color/mainColor"
-                        android:textColorHighlight="#4caf50"
-                        android:textColorLink="#4caf50"
-                        app:icon="@drawable/ic_add_24dp"
-                        app:rippleColor="#4caf50" />
+                        android:text="Add"
+                        android:textAllCaps="true"
+                        android:textColor="@color/old_main_color"
+                        android:textColorHighlight="@color/old_main_color"
+                        android:textColorLink="@color/old_main_color"
+                        app:rippleColor="@color/old_main_color" />
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -86,15 +85,16 @@
                         android:textSize="18sp"
                         android:fontFamily="@font/gotham_bold"
                         android:textColor="#000000"/>
+
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnAddCard"
                         android:layout_alignParentEnd="true"
                         style="@style/Widget.MaterialComponents.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add new"
-                        android:textAllCaps="false"
-                        app:icon="@drawable/ic_add_24dp"/>
+                        android:text="Add"
+                        android:textAllCaps="true"
+                        android:textColor="@color/old_main_color" />
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -124,9 +124,10 @@
                         style="@style/Widget.MaterialComponents.Button.TextButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add new"
-                        android:textAllCaps="false"
-                        app:icon="@drawable/ic_add_24dp"/>
+                        android:text="Add"
+                        android:textColor="@color/old_main_color"
+                        android:textAllCaps="true"
+                        />
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView

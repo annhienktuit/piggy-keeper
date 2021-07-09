@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_debit_card"
+            android:drawableLeft="@drawable/ic_credit"
             android:text="My credit cards information"
             android:background="@drawable/corner_radius_full"/>
         <Button
@@ -95,8 +95,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_settings"
-            android:text="Settings"
+            android:drawableLeft="@drawable/ic_man"
+            android:text="Profile Settings"
             android:background="@drawable/corner_radius_full"/>
         <Button
             android:id="@+id/btnAboutUs"

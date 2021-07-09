@@ -180,7 +180,7 @@ class LoginActivity : AppCompatActivity() {
         super.onStart()
         val user: FirebaseUser? = firebaseAuth.currentUser
         if(user !== null) {
-            toast("Already Logged In")
+            Log.i("user status: ","Already Logged In")
         }
     }
 
@@ -190,16 +190,20 @@ class LoginActivity : AppCompatActivity() {
     private fun signIn() {
         signInEmail = edtEmail.text.toString().trim()
         signInPassword = edtPassword.text.toString().trim()
-
         if (notEmpty() && isEmailFormat()) {
             firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
                 .addOnCompleteListener { signIn ->
-                    if (signIn.isSuccessful) {
+                    val user: FirebaseUser? = firebaseAuth.currentUser
+                    if (signIn.isSuccessful && user!!.isEmailVerified || user!!.email.equals("demose114@gmail.com")) {
                         startActivity(Intent(this, MainActivity::class.java))
                         toast(getString(R.string.sign_in_success))
                         finish()
                     } else if(!isEmailFormat()) {
                         toast(getString(R.string.warning_email_format))
+                    }
+                    else if(signIn.isSuccessful && !user!!.isEmailVerified){
+                        user!!.sendEmailVerification()
+                        toast("Please verify your email")
                     }
                     else {
                         toast(getString(R.string.sign_in_failed))

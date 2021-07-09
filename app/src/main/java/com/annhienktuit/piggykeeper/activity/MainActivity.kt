@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
             )
         //the others
         ref.keepSynced(true)
-        if(user == null)
+        if(user == null || !user!!.isEmailVerified)
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
         else
         getDatabase(ref, object : OnGetDataListener {
@@ -328,6 +328,8 @@ class MainActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container_fragment, fragment)
         transaction.commit()
+
+
         bottomNavigationView.setOnItemSelectedListener(mOnBottomNavigationView)
     }
 

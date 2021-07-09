@@ -118,7 +118,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/gotham"
-                        android:text=" of 33,990,000 VND"
+                        android:text=" of 33,990,000 USD"
                         android:textColor="@color/white"
                         android:textSize="14sp" />
                 </LinearLayout>

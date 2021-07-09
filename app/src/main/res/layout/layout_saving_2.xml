@@ -47,7 +47,7 @@
                     android:layout_alignParentRight="true"
                     android:fontFamily="@font/gotham_bold"
                     android:padding="2dp"
-                    android:text="32,000,000 VND"
+                    android:text="32,000,000 USD"
                     android:textColor="#2F2543"
                     android:textSize="14sp" />
                 <ProgressBar

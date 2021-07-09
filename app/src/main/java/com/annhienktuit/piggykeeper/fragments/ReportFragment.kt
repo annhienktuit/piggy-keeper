@@ -2,6 +2,7 @@ package com.annhienktuit.piggykeeper.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,12 +28,14 @@ class ReportFragment : Fragment() {
     private lateinit var myTab: TabLayout
     private lateinit var seeMoreBtn: Button
 
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
+        Log.i("frag","oncreeateview")
         myView = inflater.inflate(R.layout.fragment_report, container, false)
         setData(myView)
 
@@ -45,7 +48,7 @@ class ReportFragment : Fragment() {
         myTab = myView.findViewById(R.id.tabLayout)
         var adapter = ReportPagerAdapter(childFragmentManager, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT)
         myPager.adapter = adapter
-
+        myPager.offscreenPageLimit = 3
         myTab.setupWithViewPager(myPager)
         myPager.currentItem = 1
         return myView
@@ -59,7 +62,7 @@ class ReportFragment : Fragment() {
         val refTrans = data.ref.child(data.user?.uid.toString())
             .addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    txtMoney.text = Extensions.changeToMoney(snapshot.child("balance").value.toString()) + " VND"
+                    txtMoney.text = Extensions.changeToMoney(snapshot.child("balance").value.toString()) + " USD"
                 }
 
                 override fun onCancelled(error: DatabaseError) {

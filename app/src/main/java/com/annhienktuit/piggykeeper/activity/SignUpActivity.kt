@@ -116,15 +116,13 @@ class SignUpActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         toast(getString(R.string.account_created))
                         pushToFireBase(userName,userEmail,userPassword)
-                        val intentMain = Intent(this, MainActivity::class.java)
-                        intentMain.putExtra("Full Name",createAccountInputsArray[3].text.toString() + " " +createAccountInputsArray[4].text.toString())
+                        val intentLogin = Intent(this, LoginActivity::class.java)
+                        intentLogin.putExtra("Full Name",createAccountInputsArray[3].text.toString() + " " +createAccountInputsArray[4].text.toString())
                         var ref = FirebaseDatabase
                             .getInstance("https://my-wallet-80ed7-default-rtdb.asia-southeast1.firebasedatabase.app/")
                             .getReference("datas")
                         val user: FirebaseUser? = firebaseAuth.currentUser
-                        if (user != null) {
-                            user.sendEmailVerification()
-                        }
+                        user?.sendEmailVerification()
                         ref.child(user!!.uid).child("name").setValue(edtLastName.text.toString() + " " + edtFirstName.text.toString())
                         ref.child(user.uid).child("limits").child("total").setValue(0)
                         ref.child(user.uid).child("savings").child("total").setValue(0)
@@ -133,7 +131,7 @@ class SignUpActivity : AppCompatActivity() {
                         ref.child(user.uid).child("balance").setValue("0")
                         ref.child(user.uid).child("income").setValue("0")
                         ref.child(user.uid).child("expense").setValue("0")
-                        startActivity(intentMain)
+                        startActivity(intentLogin)
                         finish()
                     } else {
                         toast(getString(R.string.authentication_failed))
