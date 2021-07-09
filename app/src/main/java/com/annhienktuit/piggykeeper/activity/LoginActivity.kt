@@ -182,6 +182,9 @@ class LoginActivity : AppCompatActivity() {
         if(user !== null) {
             Log.i("user status: ","Already Logged In")
         }
+        else {
+            Log.i("user status: ","No user logged")
+        }
     }
 
     private fun notEmpty(): Boolean = signInEmail.isNotEmpty() && signInPassword.isNotEmpty()
@@ -203,6 +206,7 @@ class LoginActivity : AppCompatActivity() {
                     }
                     else if(signIn.isSuccessful && !user!!.isEmailVerified){
                         user!!.sendEmailVerification()
+                        firebaseAuth.signOut()
                         toast("Please verify your email")
                     }
                     else {
