@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.TransitionInflater
 import com.annhienktuit.piggykeeper.R
 import com.annhienktuit.piggykeeper.activity.MainActivity
 import com.annhienktuit.piggykeeper.activity.TransactionActivity
@@ -32,6 +33,11 @@ class HomeFragment : Fragment() {
 
 
     lateinit var transactionAdapter: RecentTransactionAdapter
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val inflater = TransitionInflater.from(requireContext())
+        enterTransition = inflater.inflateTransition(R.transition.slide_right)
+    }
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,

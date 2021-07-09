@@ -1,5 +1,6 @@
 package com.annhienktuit.piggykeeper.activity
 
+import FlipPageViewTransformer
 import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -27,6 +28,8 @@ class AboutActivity : AppCompatActivity() {
         mContext = this
         loadData()
         //actionBar = this.supportActionBar!!
+        val cardFlipPageTransformer = CardFlipPageTransformer2()
+        cardFlipPageTransformer.isScalable = false
         viewpager.addOnPageChangeListener(object: ViewPager.OnPageChangeListener{
             override fun onPageScrolled(
                 position: Int,
@@ -37,11 +40,6 @@ class AboutActivity : AppCompatActivity() {
             }
 
             override fun onPageSelected(position: Int) {
-//                val i2 = Intent(
-//                    Intent.ACTION_VIEW,
-//                    Uri.parse(coderModelList[position].url)
-//                )
-//                startActivity(i2)
             }
 
             override fun onPageScrollStateChanged(state: Int) {

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.TransitionInflater
 import com.annhienktuit.piggykeeper.R
 import com.annhienktuit.piggykeeper.activity.MainActivity
 import com.annhienktuit.piggykeeper.adapter.CardAdapter
@@ -58,6 +59,8 @@ class PlanningFragment() : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val inflater = TransitionInflater.from(requireContext())
+        enterTransition = inflater.inflateTransition(R.transition.slide_right)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -157,7 +160,7 @@ class PlanningFragment() : Fragment() {
         val tlBankName = view.findViewById<TextInputLayout>(R.id.textloutBankName)
         val tlCardNum = view.findViewById<TextInputLayout>(R.id.textloudCardNumber)
         //---------------------------------------------------------------------
-        val itemsMonth = listOf("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
+        val itemsMonth = listOf("Jan", "Fed", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
         val itemsYear = ArrayList<String>()
         val date = Calendar.getInstance()
         val start = date.get(Calendar.YEAR) -5

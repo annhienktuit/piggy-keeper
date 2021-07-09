@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
+import androidx.transition.TransitionInflater
 import com.annhienktuit.piggykeeper.R
 import com.annhienktuit.piggykeeper.activity.*
 import com.annhienktuit.piggykeeper.utils.FirebaseUtils
@@ -39,7 +40,11 @@ class UserFragment : Fragment() {
         .getInstance("https://my-wallet-80ed7-default-rtdb.asia-southeast1.firebasedatabase.app/")
         .getReference("datas")
 
-    //---------------------------------------------------
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val inflater = TransitionInflater.from(requireContext())
+        enterTransition = inflater.inflateTransition(R.transition.slide_right)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

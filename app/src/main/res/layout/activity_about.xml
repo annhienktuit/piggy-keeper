@@ -44,4 +44,5 @@
         android:foregroundGravity="center"
         android:overScrollMode="never">
     </androidx.viewpager.widget.ViewPager>
+
 </RelativeLayout>

@@ -14,6 +14,7 @@ import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import com.annhienktuit.piggykeeper.R
 import com.annhienktuit.piggykeeper.`object`.*
 import com.annhienktuit.piggykeeper.adapter.CardAdapter
@@ -327,9 +328,14 @@ class MainActivity : AppCompatActivity() {
             }
         }
         val transaction = supportFragmentManager.beginTransaction()
+        transaction.setCustomAnimations(
+             R.anim.slide_in,
+            R.anim.fade_out,
+             R.anim.fade_in,
+             R.anim.slide_out
+        )
         transaction.replace(R.id.container_fragment, fragment)
         transaction.commit()
-
 
         bottomNavigationView.setOnItemSelectedListener(mOnBottomNavigationView)
     }

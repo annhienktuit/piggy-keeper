@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.transition.TransitionInflater
 import androidx.viewpager.widget.ViewPager
 import com.annhienktuit.piggykeeper.R
 import com.annhienktuit.piggykeeper.activity.AllMonthReport
@@ -27,6 +28,12 @@ class ReportFragment : Fragment() {
     private lateinit var myPager: ViewPager
     private lateinit var myTab: TabLayout
     private lateinit var seeMoreBtn: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val inflater = TransitionInflater.from(requireContext())
+        enterTransition = inflater.inflateTransition(R.transition.slide_right)
+    }
 
 
     override fun onCreateView(
