@@ -9,6 +9,7 @@ import androidx.viewpager.widget.ViewPager
 import com.annhienktuit.piggykeeper.R
 import com.annhienktuit.piggykeeper.`object`.CoderModel
 import com.annhienktuit.piggykeeper.adapter.CoderAdapter
+import com.wajahatkarim3.easyflipviewpager.CardFlipPageTransformer2
 import kotlinx.android.synthetic.main.activity_about.*
 
 

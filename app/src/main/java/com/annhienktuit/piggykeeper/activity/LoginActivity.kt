@@ -43,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        overridePendingTransition(R.anim.from_middle, R.anim.to_middle)
         if (getSupportActionBar() != null) {
             getSupportActionBar()?.hide();
         }

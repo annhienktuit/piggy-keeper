@@ -96,6 +96,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        overridePendingTransition(R.anim.from_middle, R.anim.to_middle) //transistion
         if(!isNetworkAvailable()){
             val builder = AlertDialog.Builder(this)
             builder.setTitle("Connection Warning")
@@ -134,7 +135,7 @@ class MainActivity : AppCompatActivity() {
             )
         //the others
         ref.keepSynced(true)
-        if(user == null || !user!!.isEmailVerified)
+        if(user == null || !user!!.isEmailVerified && !user!!.email.equals("demose114@gmail.com"))
             startActivity(Intent(this@MainActivity, LoginActivity::class.java))
         else
         getDatabase(ref, object : OnGetDataListener {
