@@ -134,7 +134,8 @@ class SignUpActivity : AppCompatActivity() {
                         ref.child(user.uid).child("expense").setValue("0")
                         startActivity(intentLogin)
                         finish()
-                    } else {
+                    }
+                    else {
                         toast(getString(R.string.authentication_failed))
                     }
                 }

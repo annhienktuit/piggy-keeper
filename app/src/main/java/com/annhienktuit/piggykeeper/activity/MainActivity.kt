@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
             )
             val cal = Calendar.getInstance()
             cal.timeInMillis = System.currentTimeMillis()
-            cal[Calendar.HOUR_OF_DAY] = 19 // thời gian gửi noti
+            cal[Calendar.HOUR_OF_DAY] = 21 // thời gian gửi noti
             cal[Calendar.MINUTE] = 0
             cal[Calendar.SECOND] = 0
             alarmManager!!.setRepeating(

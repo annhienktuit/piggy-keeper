@@ -1,7 +1,9 @@
 package com.annhienktuit.piggykeeper.activity
 
+import android.R.id.message
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.annhienktuit.piggykeeper.R
@@ -48,8 +50,14 @@ class UserActivity : AppCompatActivity() {
             startActivity(Intent.createChooser(sharingIntent, "Share via"))
         }
         btnDevTeam.setOnClickListener {
-            val intent = Intent(this, AboutActivity::class.java)
-            startActivity(intent)
+            val intent = Intent(
+                Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto", "annhien.se@email.com", null
+                )
+            )
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Report bug for Piggy Keeper")
+            intent.putExtra(Intent.EXTRA_TEXT, message)
+            startActivity(Intent.createChooser(intent, "Choose an Email client :"))
         }
     }
     interface OnGetDataListener {

@@ -21,9 +21,9 @@ class AlarmReceiver : BroadcastReceiver() {
         )
         val builder = Notification.Builder(context)
         val notification: Notification = builder.setContentTitle("Piggy Keeper Notification")
-            .setContentText("Time to add your daily transactions")
+            .setContentText("Didn't you add today transaction?")
             .setTicker("Add now!")
-            .setSmallIcon(R.drawable.ic_wallet_new)
+            .setSmallIcon(R.drawable.ic_piggy_bank)
             .setContentIntent(pendingIntent).build()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             builder.setChannelId(CHANNEL_ID)
