@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.transition.TransitionInflater
 import com.annhienktuit.piggykeeper.R
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 class SplashScreenActivity : AppCompatActivity() {
