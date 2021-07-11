@@ -32,9 +32,25 @@ class LimitationAdapter(private val limitationList: List<Limitation>) : Recycler
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.layout_limitation_item, parent, false)
-        return LimitationViewHolder(itemView)
+        if(viewType == 0) {
+            val itemView = LayoutInflater.from(parent.context)
+                .inflate(R.layout.layout_limitation_item, parent, false)
+            return LimitationViewHolder(itemView)
+        }
+        else{
+            val itemView = LayoutInflater.from(parent.context)
+                .inflate(R.layout.layout_limitation_over_item, parent, false)
+            return LimitationViewHolder(itemView)
+        }
     }
+
+    override fun getItemViewType(position: Int): Int {
+        if (limitationList.get(position).current!! < limitationList.get(position).target!!)
+            return 1
+        else
+            return 0
+    }
+
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         fun popupMenus(v: View, adapterPosition: Int) {

@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvTitle"
                 android:text="0"
-                android:textColor="@color/old_main_color"
+                android:textColor="@color/mainColor"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -55,7 +55,8 @@
             android:fontFamily="@font/gotham_bold"
             android:text="SubTitle"
             android:textColor="@android:color/darker_gray"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="bold"/>
 
         <ImageView
             android:id="@+id/ivMore"
@@ -78,7 +79,7 @@
             android:minHeight="4dp"
             android:progress="40"
             app:backgroundColor="#ddffbc"
-            app:progressColor="@color/old_main_color" />
+            app:progressColor="@color/mainColor" />
 
     </RelativeLayout>
 
