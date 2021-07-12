@@ -10,4 +10,5 @@
     <color name="mainColor">#ec407a</color>
     <color name="blue500">#03a9f4</color>
     <color name="old_main_color">#4caf50</color>
+    <color name="red600">#e53935</color>
 </resources>

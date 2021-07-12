@@ -16,6 +16,7 @@ import com.annhienktuit.piggykeeper.utils.FirebaseUtils
 import com.annhienktuit.piggykeeper.utils.FirebaseUtils.firebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
+import com.tapadoo.alerter.Alerter
 import kotlinx.android.synthetic.main.activity_login.edtEmail
 import kotlinx.android.synthetic.main.activity_login.edtPassword
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -100,9 +101,19 @@ class SignUpActivity : AppCompatActivity() {
 
         }
         else if(!isEmailFormat()) {
-            toast(getString(R.string.warning_email_format))
+           // toast(getString(R.string.warning_email_format))
+            Alerter.create(this@SignUpActivity)
+                .setTitle("Please use correct email format")
+                .setBackgroundColorRes(R.color.red600)
+                .setDuration(5000)
+                .show()
         } else {
-            toast(getString(R.string.warning_passwords_matching))
+           // toast(getString(R.string.warning_passwords_matching))
+            Alerter.create(this@SignUpActivity)
+                .setTitle("Passwords are not matching")
+                .setBackgroundColorRes(R.color.red600)
+                .setDuration(5000)
+                .show()
         }
         return identical
     }
@@ -115,7 +126,11 @@ class SignUpActivity : AppCompatActivity() {
             firebaseAuth.createUserWithEmailAndPassword(userEmail, userPassword)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        toast(getString(R.string.account_created))
+                        Alerter.create(this@SignUpActivity)
+                            .setTitle("Created account successfully")
+                            .setBackgroundColorRes(R.color.old_main_color)
+                            .setDuration(3000)
+                            .show()
                         pushToFireBase(userName,userEmail,userPassword)
                         val intentLogin = Intent(this, LoginActivity::class.java)
                         intentLogin.putExtra("Full Name",createAccountInputsArray[3].text.toString() + " " +createAccountInputsArray[4].text.toString())
@@ -136,7 +151,11 @@ class SignUpActivity : AppCompatActivity() {
                         finish()
                     }
                     else {
-                        toast(getString(R.string.authentication_failed))
+                        Alerter.create(this@SignUpActivity)
+                            .setTitle("Failed to authenticate")
+                            .setBackgroundColorRes(R.color.red600)
+                            .setDuration(5000)
+                            .show()
                     }
                 }
         }

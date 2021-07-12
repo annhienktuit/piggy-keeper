@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.text.InputType
 import android.util.Log
 import android.view.Window
@@ -26,6 +27,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
+import com.tapadoo.alerter.Alerter
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.edtEmail
 import kotlinx.android.synthetic.main.activity_login.edtPassword
@@ -89,8 +91,13 @@ class LoginActivity : AppCompatActivity() {
         Firebase.auth.sendPasswordResetEmail(emailAddress)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this,"Email sent to $emailAddress",Toast.LENGTH_LONG).show()
-                    Log.d(TAG, "Email sent to $emailAddress")
+                  //  Toast.makeText(this,"Email sent to $emailAddress",Toast.LENGTH_LONG).show()
+                    Alerter.create(this@LoginActivity)
+                        .setTitle("Reset email sent")
+                        .setText("Please check verification email sent to $emailAddress")
+                        .setBackgroundColorRes(R.color.mainColor)
+                        .setDuration(5000)
+                        .show()
                 }
             }
     }
@@ -199,16 +206,34 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener { signIn ->
                     val user: FirebaseUser? = firebaseAuth.currentUser
                     if (signIn.isSuccessful && user!!.isEmailVerified || user!!.email.equals("demose114@gmail.com")) {
-                        startActivity(Intent(this, MainActivity::class.java))
-                        toast(getString(R.string.sign_in_success))
-                        finish()
+                        Alerter.create(this@LoginActivity)
+                            .setTitle("Sign in successfully")
+                            .setBackgroundColorRes(R.color.old_main_color)
+                            .setDuration(1000)
+                            .show()
+                        val handler = Handler()
+                        handler.postDelayed({
+                            startActivity(Intent(this, MainActivity::class.java))
+                            finish()
+                        },1000)
+
                     } else if(!isEmailFormat()) {
-                        toast(getString(R.string.warning_email_format))
+                       // toast(getString(R.string.warning_email_format))
+                        Alerter.create(this@LoginActivity)
+                            .setTitle("Please use correct email format")
+                            .setBackgroundColorRes(R.color.red600)
+                            .setDuration(2000)
+                            .show()
                     }
                     else if(signIn.isSuccessful && !user!!.isEmailVerified){
                         user!!.sendEmailVerification()
                         firebaseAuth.signOut()
-                        toast("Please verify your email")
+                        //toast("Please verify your email")
+                        Alerter.create(this@LoginActivity)
+                            .setTitle("Please verify your email")
+                            .setBackgroundColorRes(R.color.red600)
+                            .setDuration(5000)
+                            .show()
                     }
                     else {
                         toast(getString(R.string.sign_in_failed))
@@ -220,7 +245,12 @@ class LoginActivity : AppCompatActivity() {
                     input.error = "${input.hint} is required"
                 }
                 else if(!isEmailFormat()) {
-                    toast(getString(R.string.warning_email_format))
+                   // toast(getString(R.string.warning_email_format))
+                    Alerter.create(this@LoginActivity)
+                        .setTitle("Please use correct email format")
+                        .setBackgroundColorRes(R.color.red600)
+                        .setDuration(5000)
+                        .show()
                 }
             }
         }

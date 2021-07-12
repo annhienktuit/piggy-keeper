@@ -88,4 +88,5 @@ dependencies {
     implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
     //animation
     implementation 'com.wajahatkarim3.easyflipviewpager:easyflipviewpager:2.0.0'
+    implementation 'com.github.tapadoo:alerter:7.1.0'
 }

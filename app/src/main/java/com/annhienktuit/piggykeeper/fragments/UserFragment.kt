@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.tapadoo.alerter.Alerter
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -77,17 +79,26 @@ class UserFragment : Fragment() {
         val btnSignOut = view?.findViewById<Button>(R.id.btnLogOut)
         btnSignOut?.setOnClickListener {
             firebaseAuth.signOut()
+            Alerter.create(activity as MainActivity)
+                .setTitle("Signed out")
+                .setBackgroundColorRes(R.color.red600)
+                .setDuration(2000)
+                .show()
             val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build()
             val mGoogleSignInClient = GoogleSignIn.getClient(it.context, gso)
             mGoogleSignInClient.signOut()
-            Toast.makeText(activity, "Signed Out", Toast.LENGTH_LONG).show()
-            activity?.let {
-                val intent = Intent(it, LoginActivity::class.java)
-                it.startActivity(intent)
-                it.finish()
-            }
+            val handler = Handler()
+            handler.postDelayed({
+                // do something after 1000ms
+                activity?.let {
+                    val intent = Intent(it, LoginActivity::class.java)
+                    it.startActivity(intent)
+                    it.finish()
+                }
+            }, 1000)
+
 
         }
         val btnMap = view?.findViewById<Button>(R.id.btnMap)
