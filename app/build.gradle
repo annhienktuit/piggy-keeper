@@ -89,4 +89,5 @@ dependencies {
     //animation
     implementation 'com.wajahatkarim3.easyflipviewpager:easyflipviewpager:2.0.0'
     implementation 'com.github.tapadoo:alerter:7.1.0'
+    implementation 'io.card:android-sdk:5.5.0'
 }

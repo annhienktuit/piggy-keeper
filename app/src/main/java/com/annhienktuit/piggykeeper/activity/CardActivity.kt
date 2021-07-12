@@ -13,6 +13,7 @@ import com.annhienktuit.piggykeeper.utils.Extensions.toast
 import com.annhienktuit.piggykeeper.utils.FirebaseUtils
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.tapadoo.alerter.Alerter
 import kotlinx.android.synthetic.main.activity_card.*
 
 
@@ -49,21 +50,33 @@ class CardActivity : AppCompatActivity() {
             val clipboard: ClipboardManager =
                 getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("Copied", card!!.namePerson.toString())
-            toast("Copied to clipboard")
+            Alerter.create(this@CardActivity)
+                .setTitle("Copied to clipboard")
+                .setBackgroundColorRes(R.color.old_main_color)
+                .setDuration(1000)
+                .show()
             clipboard.setPrimaryClip(clip)
         }
         btnCopyAccountNumber.setOnClickListener {
             val clipboard: ClipboardManager =
                 getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("Copied", card?.accountNumber.toString())
-            toast("Copied to clipboard")
+            Alerter.create(this@CardActivity)
+                .setTitle("Copied to clipboard")
+                .setBackgroundColorRes(R.color.old_main_color)
+                .setDuration(1000)
+                .show()
             clipboard.setPrimaryClip(clip)
         }
         btnCopyCardNumber.setOnClickListener {
             val clipboard: ClipboardManager =
                 getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clip = ClipData.newPlainText("Copied", card?.cardNumber.toString())
-            toast("Copied to clipboard")
+            Alerter.create(this@CardActivity)
+                .setTitle("Copied to clipboard")
+                .setBackgroundColorRes(R.color.old_main_color)
+                .setDuration(1000)
+                .show()
             clipboard.setPrimaryClip(clip)
         }
         btnCopyAll.setOnClickListener {

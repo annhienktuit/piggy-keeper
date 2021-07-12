@@ -1,5 +1,6 @@
 package com.annhienktuit.piggykeeper.fragments
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -12,8 +13,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.transition.TransitionInflater
@@ -41,6 +40,7 @@ class UserFragment : Fragment() {
     var ref = FirebaseDatabase
         .getInstance("https://my-wallet-80ed7-default-rtdb.asia-southeast1.firebasedatabase.app/")
         .getReference("datas")
+    val REQUEST_CODE_SCAN_CARD = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +75,7 @@ class UserFragment : Fragment() {
                     it.startActivity(intent)
                 }
             }
+
         }
         val btnSignOut = view?.findViewById<Button>(R.id.btnLogOut)
         btnSignOut?.setOnClickListener {
@@ -159,6 +160,7 @@ class UserFragment : Fragment() {
 
         return view
     }
+
 
     fun export(){
         val refTrans = ref.child(user?.uid.toString()).child("transactions")

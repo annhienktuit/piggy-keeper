@@ -8,6 +8,9 @@
     <string name="authentication_failed">Failed to Authenticate!</string>
     <string name="sign_in_success">Signed in successfully</string>
     <string name="sign_in_failed">Sign in failed</string>
+    <string name="progress">Progress</string>
+    <string name="recent_transaction">Recent Transaction</string>
+    <string name="savings">Saving</string>
     <string-array name="currencies">
         <item>EUR</item>
         <item>GBP</item>

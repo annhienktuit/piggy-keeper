@@ -6,16 +6,16 @@
   <path
       android:pathData="M91,18L272.444,18A24,24 0,0 1,296.444 42L296.444,134A24,24 0,0 1,272.444 158L91,158A24,24 0,0 1,67 134L67,42A24,24 0,0 1,91 18z"
       android:strokeAlpha="0.4"
-      android:fillColor="#ec407a"
+      android:fillColor="#3F3BED"
       android:fillAlpha="0.4"/>
   <path
       android:pathData="M65,34L298.889,34A24,24 0,0 1,322.889 58L322.889,182A24,24 0,0 1,298.889 206L65,206A24,24 0,0 1,41 182L41,58A24,24 0,0 1,65 34z"
       android:strokeAlpha="0.7"
-      android:fillColor="#ec407a"
+      android:fillColor="#3F3BED"
       android:fillAlpha="0.7"/>
   <path
       android:pathData="M42,51L321,51A24,24 0,0 1,345 75L345,217A24,24 0,0 1,321 241L42,241A24,24 0,0 1,18 217L18,75A24,24 0,0 1,42 51z"
-      android:fillColor="#ec407a"/>
+      android:fillColor="#3F3BED"/>
   <group>
     <clip-path
         android:pathData="M42,50L321,50A24,24 0,0 1,345 74L345,216A24,24 0,0 1,321 240L42,240A24,24 0,0 1,18 216L18,74A24,24 0,0 1,42 50z"/>
