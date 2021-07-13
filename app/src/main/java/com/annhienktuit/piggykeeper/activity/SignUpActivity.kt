@@ -103,7 +103,8 @@ class SignUpActivity : AppCompatActivity() {
         else if(!isEmailFormat()) {
            // toast(getString(R.string.warning_email_format))
             Alerter.create(this@SignUpActivity)
-                .setTitle("Please use correct email format")
+                .setTitle("Incorrect email")
+                .setText("Please check your email format")
                 .setBackgroundColorRes(R.color.red600)
                 .setDuration(5000)
                 .show()
@@ -111,6 +112,7 @@ class SignUpActivity : AppCompatActivity() {
            // toast(getString(R.string.warning_passwords_matching))
             Alerter.create(this@SignUpActivity)
                 .setTitle("Passwords are not matching")
+                .setText("Make sure that 2 password are matches")
                 .setBackgroundColorRes(R.color.red600)
                 .setDuration(5000)
                 .show()
@@ -128,6 +130,7 @@ class SignUpActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         Alerter.create(this@SignUpActivity)
                             .setTitle("Created account successfully")
+                            .setText("Welcome to Piggy Keeper")
                             .setBackgroundColorRes(R.color.old_main_color)
                             .setDuration(3000)
                             .show()

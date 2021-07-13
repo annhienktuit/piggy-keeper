@@ -208,6 +208,7 @@ class LoginActivity : AppCompatActivity() {
                     if (signIn.isSuccessful && user!!.isEmailVerified || user!!.email.equals("demose114@gmail.com")) {
                         Alerter.create(this@LoginActivity)
                             .setTitle("Sign in successfully")
+                            .setText("Have a nice day ;)")
                             .setBackgroundColorRes(R.color.old_main_color)
                             .setDuration(1000)
                             .show()
@@ -220,7 +221,8 @@ class LoginActivity : AppCompatActivity() {
                     } else if(!isEmailFormat()) {
                        // toast(getString(R.string.warning_email_format))
                         Alerter.create(this@LoginActivity)
-                            .setTitle("Please use correct email format")
+                            .setTitle("Incorrect email")
+                            .setText("Please check your email format")
                             .setBackgroundColorRes(R.color.red600)
                             .setDuration(2000)
                             .show()
@@ -230,7 +232,8 @@ class LoginActivity : AppCompatActivity() {
                         firebaseAuth.signOut()
                         //toast("Please verify your email")
                         Alerter.create(this@LoginActivity)
-                            .setTitle("Please verify your email")
+                            .setTitle("Unverified email")
+                            .setText("Please verify your email")
                             .setBackgroundColorRes(R.color.red600)
                             .setDuration(5000)
                             .show()
@@ -247,7 +250,8 @@ class LoginActivity : AppCompatActivity() {
                 else if(!isEmailFormat()) {
                    // toast(getString(R.string.warning_email_format))
                     Alerter.create(this@LoginActivity)
-                        .setTitle("Please use correct email format")
+                        .setTitle("Incorrect email")
+                        .setText("Please check your email format")
                         .setBackgroundColorRes(R.color.red600)
                         .setDuration(5000)
                         .show()
