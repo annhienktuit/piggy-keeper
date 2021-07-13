@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +30,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.tapadoo.alerter.Alerter
+import com.thecode.aestheticdialogs.*
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -60,14 +62,21 @@ class UserFragment : Fragment() {
         btnCardManager?.setOnClickListener {
             val totalCard = data.getCardAdapter().itemCount
             if (totalCard == 0) {
-                val builder = AlertDialog.Builder(activity as MainActivity)
-                builder.setTitle("No Available Card")
-                builder.setMessage("You haven't added any credit card to your account")
-                builder.setIcon(R.drawable.ic_baseline_credit_card_24)
-                builder.setPositiveButton("Okay") { dialog, which ->
-
-                }
-                builder.show()
+                AestheticDialog.Builder(requireActivity(), DialogStyle.EMOTION, DialogType.ERROR)
+                    .setTitle("No available card")
+                    .setMessage("You should add credit card to your wallet first")
+                    .setCancelable(false)
+                    .setDarkMode(true)
+                    .setGravity(Gravity.CENTER)
+                    .setAnimation(DialogAnimation.SHRINK)
+                    .setDuration(3000)
+                    .setOnClickListener(object : OnDialogClickListener {
+                        override fun onClick(dialog: AestheticDialog.Builder) {
+                            dialog.dismiss()
+                            //actions...
+                        }
+                    })
+                    .show()
             } else {
                 activity?.let {
                     val intent = Intent(it, CardActivity::class.java)
@@ -81,6 +90,7 @@ class UserFragment : Fragment() {
             firebaseAuth.signOut()
             Alerter.create(activity as MainActivity)
                 .setTitle("Signed out")
+                .setText("See you again")
                 .setBackgroundColorRes(R.color.red600)
                 .setDuration(2000)
                 .show()

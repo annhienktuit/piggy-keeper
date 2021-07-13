@@ -33,6 +33,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_add_transaction.view.*
 import kotlinx.android.synthetic.main.dialog_done_interest_rate.*
@@ -99,14 +100,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         overridePendingTransition(R.anim.from_middle, R.anim.to_middle) //transistion
         if(!isNetworkAvailable()){
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("Connection Warning")
-            builder.setMessage("Make sure you have Internet connection to sync data with other devices.\n" +
-                    "But no worry, you can use the app and your local data will be upload when connection available")
-            builder.setIcon(R.drawable.ic_baseline_warning_24)
-            builder.setPositiveButton("Okay") { dialog, which ->
-            }
-            builder.show()
+//            val builder = AlertDialog.Builder(this)
+//            builder.setTitle("Connection Warning")
+//            builder.setMessage("Make sure you have Internet connection to sync data with other devices.\n" +
+//                    "But no worry, you can use the app and your local data will be upload when connection available")
+//            builder.setIcon(R.drawable.ic_baseline_warning_24)
+//            builder.setPositiveButton("Okay") { dialog, which ->
+//            }
+//            builder.show()
+            AestheticDialog.Builder(this, DialogStyle.CONNECTIFY, DialogType.ERROR)
+                .setTitle("No Internet Connection")
+                .setMessage("Dont't worry, your data will be upload when connection available")
+                .setCancelable(false)
+                .setDarkMode(true)
+                .setGravity(Gravity.TOP)
+                .setAnimation(DialogAnimation.SHRINK)
+                .setOnClickListener(object : OnDialogClickListener {
+                    override fun onClick(dialog: AestheticDialog.Builder) {
+                        dialog.dismiss()
+                        //actions...
+                    }
+                })
+                .show()
         }
         val pref = getSharedPreferences("Notification", MODE_PRIVATE)
         pref.edit().putBoolean("status", true).apply()

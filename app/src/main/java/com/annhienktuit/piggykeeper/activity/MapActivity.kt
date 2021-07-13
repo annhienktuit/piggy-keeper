@@ -12,6 +12,7 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
+import android.view.Gravity
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -19,6 +20,7 @@ import com.annhienktuit.piggykeeper.R
 import com.annhienktuit.piggykeeper.utils.Extensions.toast
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.thecode.aestheticdialogs.*
 import kotlinx.android.synthetic.main.activity_map.*
 import java.io.IOException
 import java.util.*
@@ -38,13 +40,27 @@ class MapActivity : AppCompatActivity() {
             getSupportActionBar()?.hide();
         }
         if (isLocationEnabled(this) == false) {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("No location services")
-            builder.setMessage("Make sure you have turned on and allowed location services")
-            builder.setIcon(R.drawable.ic_baseline_warning_24)
-            builder.setPositiveButton("Okay") { dialog, which ->
-            }
-            builder.show()
+//            val builder = AlertDialog.Builder(this)
+//            builder.setTitle("No location services")
+//            builder.setMessage("Make sure you have turned on and allowed location services")
+//            builder.setIcon(R.drawable.ic_baseline_warning_24)
+//            builder.setPositiveButton("Okay") { dialog, which ->
+//            }
+//            builder.show()
+            AestheticDialog.Builder(this, DialogStyle.CONNECTIFY, DialogType.ERROR)
+                .setTitle("No location services")
+                .setMessage("Make sure you have turned on and allowed location services")
+                .setCancelable(false)
+                .setDarkMode(true)
+                .setGravity(Gravity.CENTER)
+                .setAnimation(DialogAnimation.SHRINK)
+                .setOnClickListener(object : OnDialogClickListener {
+                    override fun onClick(dialog: AestheticDialog.Builder) {
+                        dialog.dismiss()
+                        //actions...
+                    }
+                })
+                .show()
         }
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         fetchLocation() //innitialize location

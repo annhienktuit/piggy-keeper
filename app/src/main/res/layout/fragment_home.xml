@@ -200,6 +200,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp" />
+        <ImageView
+            android:id="@+id/emptyImage"
+            android:layout_below="@+id/layout_recent"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_empty_2"/>
+        <TextView
+            android:id="@+id/emptyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emptyImage"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="Your transaction list is empty. Add now"/>
 
     </RelativeLayout>
 
