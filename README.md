@@ -42,7 +42,7 @@ After commit **#0fe7377965537047111930e4ccdf8ac1c6379799**, this project is self
 * [CurrenConv API](https://free.currconv.com/api)
 ## Installation 
 
-Install with APK file [here](https://apkfab.com/my-wallet/com.annhienktuit.piggykeeper/apk?h=0be1b8709b0e44bdaf15485fe22d6358664ef7b60f96b1714dd692bc978c5aaa)
+Install with APK file [here](https://play.google.com/store/apps/details?id=com.annhienktuit.piggykeeper)
 
 
     
