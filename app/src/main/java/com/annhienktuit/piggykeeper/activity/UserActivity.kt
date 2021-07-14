@@ -44,7 +44,7 @@ class UserActivity : AppCompatActivity() {
         btnShare.setOnClickListener {
             val sharingIntent = Intent(Intent.ACTION_SEND)
             sharingIntent.type = "text/plain"
-            val shareBody = "Love this money management app, try it now"
+            val shareBody = "Love this money management app, try it now at: https://play.google.com/store/apps/details?id=com.annhienktuit.piggykeeper"
             sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Piggy Keeper")
             sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody)
             startActivity(Intent.createChooser(sharingIntent, "Share via"))
@@ -52,7 +52,7 @@ class UserActivity : AppCompatActivity() {
         btnDevTeam.setOnClickListener {
             val intent = Intent(
                 Intent.ACTION_SENDTO, Uri.fromParts(
-                    "mailto", "annhien.se@email.com", null
+                    "mailto", "annhien.se@gmail.com", null
                 )
             )
             intent.putExtra(Intent.EXTRA_SUBJECT, "Report bug for Piggy Keeper")
