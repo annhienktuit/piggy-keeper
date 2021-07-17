@@ -207,49 +207,58 @@ class LoginActivity : AppCompatActivity() {
         if (notEmpty() && isEmailFormat()) {
             firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
                 .addOnCompleteListener { signIn ->
-                    val user: FirebaseUser? = firebaseAuth.currentUser
-                    if (signIn.isSuccessful && user!!.isEmailVerified || user!!.email.equals("demose114@gmail.com")) {
-                        Alerter.create(this@LoginActivity)
-                            .setTitle("Sign in successfully")
-                            .setText("Have a nice day ;)")
-                            .setBackgroundColorRes(R.color.old_main_color)
-                            .setDuration(1000)
-                            .show()
-                        val handler = Handler()
-                        handler.postDelayed({
-                            startActivity(Intent(this, MainActivity::class.java))
-                            finish()
-                        },1000)
+                    if (signIn.isSuccessful) {
+                        val user: FirebaseUser? = firebaseAuth.currentUser
+                        if ((signIn.isSuccessful && user?.isEmailVerified == true) || user!!.email.equals("demose114@gmail.com")) {
+                            Alerter.create(this@LoginActivity)
+                                .setTitle("Sign in successfully")
+                                .setText("Have a nice day ;)")
+                                .setBackgroundColorRes(R.color.old_main_color)
+                                .setDuration(1000)
+                                .show()
+                            val handler = Handler()
+                            handler.postDelayed({
+                                startActivity(Intent(this, MainActivity::class.java))
+                                finish()
+                            }, 1000)
 
-                    } else if(!isEmailFormat()) {
-                       // toast(getString(R.string.warning_email_format))
-                        Alerter.create(this@LoginActivity)
-                            .setTitle("Incorrect email")
-                            .setText("Please check your email format")
-                            .setBackgroundColorRes(R.color.red600)
-                            .setDuration(2000)
+                        } else if (!isEmailFormat()) {
+                            // toast(getString(R.string.warning_email_format))
+                            Alerter.create(this@LoginActivity)
+                                .setTitle("Incorrect email")
+                                .setText("Please check your email format")
+                                .setBackgroundColorRes(R.color.red600)
+                                .setDuration(2000)
+                                .show()
+                        } else if (signIn.isSuccessful && !user!!.isEmailVerified) {
+                            user!!.sendEmailVerification()
+                            firebaseAuth.signOut()
+                            //toast("Please verify your email")
+                            Alerter.create(this@LoginActivity)
+                                .setTitle("Unverified email")
+                                .setText("Please verify your email")
+                                .setBackgroundColorRes(R.color.red600)
+                                .setDuration(5000)
+                                .show()
+                        } else {
+                            AestheticDialog.Builder(this, DialogStyle.FLASH, DialogType.ERROR)
+                                .setTitle("Error")
+                                .setMessage("Incorrect email or password")
+                                .show()
+                        }
+                    }
+//                    else{
+//                        AestheticDialog.Builder(this, DialogStyle.FLASH, DialogType.ERROR)
+//                            .setTitle("Error")
+//                            .setMessage("Incorrect email or password")
+//                            .show()
+//                    }
+                    }.addOnFailureListener {
+                        AestheticDialog.Builder(this, DialogStyle.FLASH, DialogType.ERROR)
+                            .setTitle("Error")
+                            .setMessage("Incorrect email or password")
                             .show()
                     }
-                    else if(signIn.isSuccessful && !user!!.isEmailVerified){
-                        user!!.sendEmailVerification()
-                        firebaseAuth.signOut()
-                        //toast("Please verify your email")
-                        Alerter.create(this@LoginActivity)
-                            .setTitle("Unverified email")
-                            .setText("Please verify your email")
-                            .setBackgroundColorRes(R.color.red600)
-                            .setDuration(5000)
-                            .show()
-                    }
-                    else {
-                        toast(getString(R.string.sign_in_failed))
-                    }
-                }.addOnFailureListener {
-                    AestheticDialog.Builder(this, DialogStyle.FLASH, DialogType.ERROR)
-                        .setTitle("Error")
-                        .setMessage("Incorrect email or password")
-                        .show()
-                }
         } else {
             signInInputsArray.forEach { input ->
                 if (input.text.toString().trim().isEmpty()) {

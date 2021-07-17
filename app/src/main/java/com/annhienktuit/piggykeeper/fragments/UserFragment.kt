@@ -29,6 +29,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.core.view.Change
 import com.tapadoo.alerter.Alerter
 import com.thecode.aestheticdialogs.*
 import java.io.File
@@ -148,6 +149,15 @@ class UserFragment : Fragment() {
                 it.startActivity(intent)
             }
         }
+
+        val btnChangePassword = view?.findViewById<Button>(R.id.btnChangePassword)
+        btnChangePassword?.setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, ChangePasswordActivity::class.java)
+                it.startActivity(intent)
+            }
+        }
+
         val btnExport = view.findViewById<Button>(R.id.btnExport)
         btnExport.setOnClickListener {
             export()

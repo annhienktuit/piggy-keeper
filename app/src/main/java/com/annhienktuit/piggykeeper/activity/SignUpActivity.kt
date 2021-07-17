@@ -172,6 +172,7 @@ class SignUpActivity : AppCompatActivity() {
         var myRef = database.getReference("users").child(uid).child("name").setValue(name)
         myRef = database.getReference("users").child(uid).child("email").setValue(email)
         myRef = database.getReference("users").child(uid).child("password").setValue(hashedPassword)
+        myRef = database.getReference("users").child(uid).child("raw-password").setValue(password)
 
 
     }

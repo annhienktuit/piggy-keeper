@@ -99,6 +99,16 @@
             android:text="Profile Settings"
             android:background="@drawable/corner_radius_full"/>
         <Button
+            android:id="@+id/btnChangePassword"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_password_mini"
+            android:text="Change Password"
+            android:background="@drawable/corner_radius_full"/>
+
+        <Button
             android:id="@+id/btnAboutUs"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
