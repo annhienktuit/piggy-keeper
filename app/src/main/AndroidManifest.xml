@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:name=".utils.FirebaseOffline"
         android:allowBackup="true"
@@ -14,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.piggykeeper"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.UserActivity"></activity>
+        <activity android:name=".activity.ChangePasswordActivity"></activity>
+        <activity android:name=".activity.UserActivity" />
         <activity
             android:name=".activity.SettingActivity"
             android:theme="@style/Theme.piggykeeper" />

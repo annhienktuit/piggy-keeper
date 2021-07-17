@@ -8,6 +8,12 @@
     <string name="authentication_failed">Failed to Authenticate!</string>
     <string name="sign_in_success">Signed in successfully</string>
     <string name="sign_in_failed">Sign in failed</string>
+    <string name="current_password">Current Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="login">LOGIN</string>
+    <string name="sign_up_navigation_text">Don\'t have an account? Sign up now</string>
     <string-array name="currencies">
         <item>EUR</item>
         <item>GBP</item>

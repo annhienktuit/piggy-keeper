@@ -3,8 +3,8 @@ package com.annhienktuit.piggykeeper.fragments
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -74,6 +74,7 @@ class HomeFragment : Fragment() {
         var recyclerTransaction = view.findViewById(R.id.recyclerTransaction) as RecyclerView
         var emptyView = view.findViewById(R.id.emptyImage) as ImageView
         var emptyText = view.findViewById(R.id.emptyText) as TextView
+        val handler = Handler()
         data = (activity as MainActivity)
         transactionAdapter = data.getTransactionAdapter()
         name = data.getName().toString()
@@ -82,16 +83,19 @@ class HomeFragment : Fragment() {
         expense = data.getExpense().toString()
         setSwipeToDelete(recyclerTransaction)
         recyclerTransaction.adapter = transactionAdapter
-        if(transactionAdapter.itemCount == 0) {
-            recyclerTransaction.visibility = View.INVISIBLE
-            emptyView.visibility = View.VISIBLE
-            emptyText.visibility = View.VISIBLE
-        }
-        else {
-            recyclerTransaction.visibility = View.VISIBLE
-            emptyView.visibility = View.INVISIBLE
-            emptyText.visibility = View.INVISIBLE
-        }
+        handler.postDelayed(Runnable {
+            if(transactionAdapter.itemCount == 0) {
+                recyclerTransaction.visibility = View.INVISIBLE
+                emptyView.visibility = View.VISIBLE
+                emptyText.visibility = View.VISIBLE
+            }
+            else {
+                recyclerTransaction.visibility = View.VISIBLE
+                emptyView.visibility = View.INVISIBLE
+                emptyText.visibility = View.INVISIBLE
+            }
+
+        }, 150)
         recyclerTransaction.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         recyclerTransaction.setHasFixedSize(true)
         var txtName = view.findViewById<TextView>(R.id.txtName)

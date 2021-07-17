@@ -70,7 +70,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="15dp"
-            android:text="LOGIN"
+            android:text="@string/login"
             android:textSize="20sp"/>
         <TextView
             android:id="@+id/textViewDoSignUp"
@@ -81,7 +81,7 @@
             android:layout_gravity="center"
             android:textColor="@color/blue500"
             android:textStyle="bold"
-            android:text="Don't have an account? Sign up now"/>
+            android:text="@string/sign_up_navigation_text"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

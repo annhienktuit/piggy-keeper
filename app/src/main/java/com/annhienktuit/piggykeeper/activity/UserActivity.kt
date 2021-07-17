@@ -41,6 +41,10 @@ class UserActivity : AppCompatActivity() {
             override fun onFailure() {
             }
         })
+        btnOccupation.setOnClickListener {
+            val intent = Intent(this, ChangePasswordActivity::class.java)
+            startActivity(intent)
+        }
         btnShare.setOnClickListener {
             val sharingIntent = Intent(Intent.ACTION_SEND)
             sharingIntent.type = "text/plain"

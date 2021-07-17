@@ -28,6 +28,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import com.tapadoo.alerter.Alerter
+import com.thecode.aestheticdialogs.AestheticDialog
+import com.thecode.aestheticdialogs.DialogStyle
+import com.thecode.aestheticdialogs.DialogType
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.edtEmail
 import kotlinx.android.synthetic.main.activity_login.edtPassword
@@ -241,6 +244,11 @@ class LoginActivity : AppCompatActivity() {
                     else {
                         toast(getString(R.string.sign_in_failed))
                     }
+                }.addOnFailureListener {
+                    AestheticDialog.Builder(this, DialogStyle.FLASH, DialogType.ERROR)
+                        .setTitle("Error")
+                        .setMessage("Incorrect email or password")
+                        .show()
                 }
         } else {
             signInInputsArray.forEach { input ->
