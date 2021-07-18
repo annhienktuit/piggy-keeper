@@ -37,7 +37,7 @@ Made in Vietnam
 
 **Client:** Native Android with Kotlin
 
-**Server:** Firebase Realtime Database, Firebase Authentication
+**Server:** Firebase Realtime Database, Firebase Authentication, Firebase Crashlytics & Analytics
 
 **Library**: 
 * [AnyChart](https://github.com/AnyChart/AnyChart-Android?fbclid=IwAR3AFY4x2MXZoyrsOVDZ-Cjgxre5XvkCnscTXlQkNumZFulwnFyyB7Kjlhg)
@@ -45,6 +45,8 @@ Made in Vietnam
 * [RoundedHorizontalProgressBar](https://github.com/saisasanksunkavalli/RoundedHorizontalProgressBar)
 
 * [CurrenConv API](https://free.currconv.com/api)
+* [Easy Flip VIewPager]
+* [Aesthetic Dialogs]
 ## Installation 
 
 Install with APK file [here](https://play.google.com/store/apps/details?id=com.annhienktuit.piggykeeper)
