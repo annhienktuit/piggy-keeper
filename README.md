@@ -8,6 +8,7 @@
 A money management with realtime services for based on My Wallet open source
 
 After commit **#0fe7377965537047111930e4ccdf8ac1c6379799**, this project is self paced project by me
+
 Made in Vietnam
 
 
