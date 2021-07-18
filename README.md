@@ -69,7 +69,7 @@ Install with APK file [here](https://play.google.com/store/apps/details?id=com.a
    </p>
    
    <p align="center">
-   <img src="https://i.imgur.com/ZHTYyln.jpg" height = "720" width="360"> 
+   <img src="https://i.imgur.com/GTZTf3V.png" height = "720" width="360"> 
    </p>
    
 
