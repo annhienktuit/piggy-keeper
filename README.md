@@ -1,10 +1,15 @@
 <p align="center">
    <img src="https://i.imgur.com/8sByYKX.png" height = "360" width="720"> 
    </p>
+   <p align="center">
+   <img src="https://i.imgur.com/LR78Gs9.jpg" height = "360" width="720"> 
+   </p>
 
 A money management with realtime services for based on My Wallet open source
 
 After commit **#0fe7377965537047111930e4ccdf8ac1c6379799**, this project is self paced project by me
+
+Made in Vietnam
 
 
 ## Authors
@@ -32,7 +37,7 @@ After commit **#0fe7377965537047111930e4ccdf8ac1c6379799**, this project is self
 
 **Client:** Native Android with Kotlin
 
-**Server:** Firebase Realtime Database, Firebase Authentication
+**Server:** Firebase Realtime Database, Firebase Authentication, Firebase Crashlytics & Analytics
 
 **Library**: 
 * [AnyChart](https://github.com/AnyChart/AnyChart-Android?fbclid=IwAR3AFY4x2MXZoyrsOVDZ-Cjgxre5XvkCnscTXlQkNumZFulwnFyyB7Kjlhg)
@@ -40,6 +45,8 @@ After commit **#0fe7377965537047111930e4ccdf8ac1c6379799**, this project is self
 * [RoundedHorizontalProgressBar](https://github.com/saisasanksunkavalli/RoundedHorizontalProgressBar)
 
 * [CurrenConv API](https://free.currconv.com/api)
+* [Easy Flip VIewPager]
+* [Aesthetic Dialogs]
 ## Installation 
 
 Install with APK file [here](https://play.google.com/store/apps/details?id=com.annhienktuit.piggykeeper)
@@ -64,7 +71,7 @@ Install with APK file [here](https://play.google.com/store/apps/details?id=com.a
    </p>
    
    <p align="center">
-   <img src="https://i.imgur.com/ZHTYyln.jpg" height = "720" width="360"> 
+   <img src="https://i.imgur.com/GTZTf3V.png" height = "720" width="360"> 
    </p>
    
 
