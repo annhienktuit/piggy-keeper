@@ -51,6 +51,8 @@ class CurrentMonthFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView: View = inflater.inflate(R.layout.fragment_current_month, container, false)
         setData(rootView)
+        pieIncomeChart.setLicenceKey(License.anyChartLicense)
+        pieExpenseChart.setLicenceKey(License.anyChartLicense)
         setIncomePieChartData()
         setExpensePieChartData()
 
@@ -80,7 +82,6 @@ class CurrentMonthFragment : Fragment() {
         currentIncome.text = changeToMoney(amountCurrentIncome.toString())
         currentDebt.text = changeToMoney(amountCurrentDebt.toString())
         currentBalance.text = changeToMoney((amountCurrentIncome - amountCurrentExpense).toString())
-        pieIncomeChart.setLicenceKey(License.anyChartLicense)
         pieIncomeChart.setProgressBar(progressIncomeBar)
         APIlib.getInstance().setActiveAnyChartView(pieIncomeChart)
         var pie: Pie = AnyChart.pie()
@@ -108,7 +109,6 @@ class CurrentMonthFragment : Fragment() {
         currentExpense.text = changeToMoney(amountCurrentExpense.toString())
         currentLoan.text = changeToMoney(amountCurrentLoan.toString())
         currentBalance.text = changeToMoney((amountCurrentIncome - amountCurrentExpense).toString())
-        pieExpenseChart.setLicenceKey(License.anyChartLicense)
         pieExpenseChart.setProgressBar(progressExpenseBar)
         APIlib.getInstance().setActiveAnyChartView(pieExpenseChart)
         var pie: Pie = AnyChart.pie()
