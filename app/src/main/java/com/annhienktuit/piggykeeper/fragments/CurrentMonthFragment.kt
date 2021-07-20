@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.annhienktuit.piggykeeper.R
 import com.annhienktuit.piggykeeper.activity.MainActivity
 import com.annhienktuit.piggykeeper.utils.FirebaseUtils
+import com.annhienktuit.piggykeeper.utils.License
 import com.anychart.APIlib
 import com.anychart.AnyChart
 import com.anychart.AnyChartView
@@ -79,7 +80,7 @@ class CurrentMonthFragment : Fragment() {
         currentIncome.text = changeToMoney(amountCurrentIncome.toString())
         currentDebt.text = changeToMoney(amountCurrentDebt.toString())
         currentBalance.text = changeToMoney((amountCurrentIncome - amountCurrentExpense).toString())
-
+        pieIncomeChart.setLicenceKey(License.anyChartLicense)
         pieIncomeChart.setProgressBar(progressIncomeBar)
         APIlib.getInstance().setActiveAnyChartView(pieIncomeChart)
         var pie: Pie = AnyChart.pie()
@@ -107,7 +108,7 @@ class CurrentMonthFragment : Fragment() {
         currentExpense.text = changeToMoney(amountCurrentExpense.toString())
         currentLoan.text = changeToMoney(amountCurrentLoan.toString())
         currentBalance.text = changeToMoney((amountCurrentIncome - amountCurrentExpense).toString())
-
+        pieExpenseChart.setLicenceKey(License.anyChartLicense)
         pieExpenseChart.setProgressBar(progressExpenseBar)
         APIlib.getInstance().setActiveAnyChartView(pieExpenseChart)
         var pie: Pie = AnyChart.pie()

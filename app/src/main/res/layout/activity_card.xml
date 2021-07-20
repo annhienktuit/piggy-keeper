@@ -271,7 +271,7 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="#1e88e5"
         android:text="Quick share card info"
-        app:icon="@drawable/ic_copy"
+        app:icon="@drawable/ic_baseline_share_24"
         app:iconTint="@color/white"
         android:textColor="@color/white"
         android:drawableRight="@drawable/ic_copy"

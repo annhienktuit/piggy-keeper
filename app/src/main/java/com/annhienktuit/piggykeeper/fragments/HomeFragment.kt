@@ -22,6 +22,7 @@ import com.annhienktuit.piggykeeper.activity.MainActivity
 import com.annhienktuit.piggykeeper.activity.TransactionActivity
 import com.annhienktuit.piggykeeper.adapter.RecentTransactionAdapter
 import com.annhienktuit.piggykeeper.utils.Extensions.changeToMoney
+import com.maxkeppeler.sheets.info.InfoSheet
 
 
 private const val ARG_PARAM1 = "param1"
@@ -122,18 +123,30 @@ class HomeFragment : Fragment() {
                 //Remove swiped item from list and notify the RecyclerView
                 val position = viewHolder.adapterPosition
                 if (!transactionAdapter.isSavingTran(position)) {
-                    val dialog = AlertDialog.Builder(context)
-                    dialog.setTitle("Confirm")
-                    dialog.setIcon(R.drawable.ic_baseline_warning_24)
-                    dialog.setMessage("Do you want to delete this transaction?")
-                    dialog.setPositiveButton("OK") { dialog, which ->
-                        transactionAdapter.deleteItem(position, balance, income, expense)
+//                    val dialog = AlertDialog.Builder(context)
+//                    dialog.setTitle("Confirm")
+//                    dialog.setIcon(R.drawable.ic_baseline_warning_24)
+//                    dialog.setMessage("Do you want to delete this transaction?")
+//                    dialog.setPositiveButton("OK") { dialog, which ->
+//                        transactionAdapter.deleteItem(position, balance, income, expense)
+//                    }
+//                    dialog.setNegativeButton("Cancel") { dialog, which ->
+//                        dialog.dismiss()
+//                        rv.adapter!!.notifyDataSetChanged()
+//                    }
+//                    dialog.show()
+                    context?.let {
+                        InfoSheet().show(it) {
+                            title("Do you want to delete this transaction?")
+                            content("You can not undo this action.")
+                            onNegative("Cancel") {
+                                rv.adapter!!.notifyDataSetChanged()
+                            }
+                            onPositive("OK") {
+                                transactionAdapter.deleteItem(position, balance, income, expense)
+                            }
+                        }
                     }
-                    dialog.setNegativeButton("Cancel") { dialog, which ->
-                        dialog.dismiss()
-                        rv.adapter!!.notifyDataSetChanged()
-                    }
-                    dialog.show()
                 } else {
                     val dialog = AlertDialog.Builder(context)
                     dialog.setMessage("Please go to saving to delete this transaction!")

@@ -160,7 +160,7 @@ class PlanningFragment() : Fragment() {
         val tlBankName = view.findViewById<TextInputLayout>(R.id.textloutBankName)
         val tlCardNum = view.findViewById<TextInputLayout>(R.id.textloudCardNumber)
         //---------------------------------------------------------------------
-        val itemsMonth = listOf("Jan", "Fed", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+        val itemsMonth = listOf("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
         val itemsYear = ArrayList<String>()
         val date = Calendar.getInstance()
         val start = date.get(Calendar.YEAR) -5

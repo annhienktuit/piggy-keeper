@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.annhienktuit.piggykeeper.R
 import com.annhienktuit.piggykeeper.activity.MainActivity
 import com.annhienktuit.piggykeeper.utils.FirebaseUtils
+import com.annhienktuit.piggykeeper.utils.License
 import com.anychart.APIlib
 import com.anychart.AnyChart
 import com.anychart.AnyChartView
@@ -49,7 +50,6 @@ class PreviousMonthFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView: View = inflater.inflate(R.layout.fragment_previous_month, container, false)
-
         setData(rootView)
         setIncomePieChartData()
         setExpensePieChartData()
@@ -79,7 +79,7 @@ class PreviousMonthFragment : Fragment() {
         previousIncome.text = changeToMoney(amountPreviousIncome.toString())
         previousDebt.text = changeToMoney(amountPreviousDebt.toString())
         previousBalance.text = changeToMoney((amountPreviousIncome - amountPreviousExpense).toString())
-
+        pieIncomeChart.setLicenceKey(License.anyChartLicense)
         pieIncomeChart.setProgressBar(progressIncomeBar)
         APIlib.getInstance().setActiveAnyChartView(pieIncomeChart)
         var pie: Pie = AnyChart.pie()
@@ -108,7 +108,7 @@ class PreviousMonthFragment : Fragment() {
         previousExpense.text = changeToMoney(amountPreviousExpense.toString())
         previousLoan.text = changeToMoney(amountPreviousLoan.toString())
         previousBalance.text = changeToMoney((amountPreviousIncome - amountPreviousExpense).toString())
-
+        pieExpenseChart.setLicenceKey(License.anyChartLicense)
         pieExpenseChart.setProgressBar(progressExpenseBar)
         APIlib.getInstance().setActiveAnyChartView(pieExpenseChart)
         var pie: Pie = AnyChart.pie()
