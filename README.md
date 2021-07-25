@@ -14,8 +14,8 @@ A money management with realtime services for based on My Wallet open source
 ## Authors
 
 - [Nhiên Nguyễn](https://github.com/annhienktuit)
-- [Khải Hoàn](https://github.com/khaihoan2306)
-- [Thanh Hiền](https://github.com/HinTran013)
+- [Khải Hoàn(My-Wallet)](https://github.com/khaihoan2306)
+- [Thanh Hiền(My-Wallet)](https://github.com/HinTran013)
 
 
   
