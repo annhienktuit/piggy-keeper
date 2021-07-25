@@ -35,6 +35,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    // This is important, it will run lint checks but won't abort build
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
