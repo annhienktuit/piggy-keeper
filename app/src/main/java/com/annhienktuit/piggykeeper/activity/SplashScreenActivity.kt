@@ -24,12 +24,17 @@ class SplashScreenActivity : AppCompatActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.setStatusBarColor(Color.parseColor("#FFFFFF"))
         }
-        imageViewLogo.alpha = 0f
+        //imageViewLogo.alpha = 0f
         textViewTitle.alpha = 0f
+//        imageViewLogo.animate().setDuration(1500).alpha(1f).withEndAction {
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+//            finish()
+//        }
         imageViewLogo.animate().setDuration(1500).alpha(1f).withEndAction {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
             finish()
         }
         textViewTitle.animate().setDuration(1500).alpha(1f)

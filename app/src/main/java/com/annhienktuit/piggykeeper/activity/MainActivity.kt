@@ -98,16 +98,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        overridePendingTransition(R.anim.from_middle, R.anim.to_middle) //transistion
+        //overridePendingTransition(R.anim.from_middle, R.anim.to_middle) //transistion
         if(!isNetworkAvailable()){
-//            val builder = AlertDialog.Builder(this)
-//            builder.setTitle("Connection Warning")
-//            builder.setMessage("Make sure you have Internet connection to sync data with other devices.\n" +
-//                    "But no worry, you can use the app and your local data will be upload when connection available")
-//            builder.setIcon(R.drawable.ic_baseline_warning_24)
-//            builder.setPositiveButton("Okay") { dialog, which ->
-//            }
-//            builder.show()
             AestheticDialog.Builder(this, DialogStyle.CONNECTIFY, DialogType.ERROR)
                 .setTitle("No Internet Connection")
                 .setMessage("Dont't worry, your data will be upload when connection available")
@@ -118,7 +110,6 @@ class MainActivity : AppCompatActivity() {
                 .setOnClickListener(object : OnDialogClickListener {
                     override fun onClick(dialog: AestheticDialog.Builder) {
                         dialog.dismiss()
-                        //actions...
                     }
                 })
                 .show()

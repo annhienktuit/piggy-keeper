@@ -6,16 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".activity.SplashScreenActivity">
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/imageViewLogo"
         android:layout_width="269dp"
         android:layout_height="290dp"
+        app:lottie_rawRes="@raw/piggy_lottie"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.267"
-        app:srcCompat="@drawable/ic_piggy_bank" />
+        app:layout_constraintVertical_bias="0.267"/>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageViewLogo"-->
+<!--        android:layout_width="269dp"-->
+<!--        android:layout_height="290dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.267"-->
+<!--        app:srcCompat="@drawable/ic_piggy_bank" />-->
 
     <TextView
         android:id="@+id/textViewTitle"

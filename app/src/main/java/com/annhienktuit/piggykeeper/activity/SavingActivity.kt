@@ -110,7 +110,7 @@ class SavingActivity : AppCompatActivity() {
 
                 }
             })
-        getDatabase(ref.child("saving" + pos), object : OnGetDataListener {
+        getDatabase(ref.child("saving$pos"), object : OnGetDataListener {
             override fun onSuccess(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
                     val index = dataSnapshot.child("index").value.toString()

@@ -48,6 +48,7 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        setData(view)
         val pref = this.requireActivity()
             .getSharedPreferences("pref", Context.MODE_PRIVATE)
         Log.i("NotiFrag: ", pref.getString("status","").toString())
@@ -57,7 +58,6 @@ class HomeFragment : Fragment() {
             val intent = Intent(activity, TransactionActivity::class.java)
             startActivity(intent)
         }
-        setData(view)
         return view
     }
 
