@@ -36,16 +36,16 @@
     </RelativeLayout>
 
 
-
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textViewBankName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:paddingLeft="20dp"
-        android:paddingBottom="10dp"
         android:background="@drawable/edit_text_border"
-        android:hint="Enter Bank Name"/>
+        android:hint="Enter Bank Name"
+        android:minHeight="48dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -79,11 +79,13 @@
         android:text="Your address: "
         android:textColor="@color/black"
         android:textStyle="bold"/>
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_mylocation"/>
+        app:lottie_rawRes="@raw/map_lottie"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
 </LinearLayout>
